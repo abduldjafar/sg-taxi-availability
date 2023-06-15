@@ -10,13 +10,14 @@ class ApiCall(object):
 
     def geocode(self,longitude, latitude):
         url =  "https://geocode.maps.co/reverse?lat={}&lon={}".format(str(latitude),str(longitude))
+        response = requests.get(url)
         data = {}
         try:
-            response = requests.get(url)
             data = response.json()
             sleep(1)
         except:
-            pass
+            print(response.text)
+            sleep(5)
         return data
 
     def get_data(self):

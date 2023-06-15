@@ -5,5 +5,8 @@ class Transformation(object):
         pass
 
     def get_road_from_api(self,geocode_datas):
-        road = geocode_datas["address"]["road"] if "road" in geocode_datas["address"] else "not known"
+        if "address" in geocode_datas:
+            road = geocode_datas["address"]["road"] if "road" in geocode_datas["address"] else "not known"
+        else:
+            road = "not known"
         return road

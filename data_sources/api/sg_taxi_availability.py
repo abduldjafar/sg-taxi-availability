@@ -9,8 +9,15 @@ class ApiCall(object):
 
     def geocode(self,longitude, latitude):
         url =  "https://geocode.maps.co/reverse?lat={}&lon={}".format(str(latitude),str(longitude))
-        response = requests.get(url)
-        return response.json()
+        print(url)
+        data = {}
+
+        try:
+            response = requests.get(url)
+            data = response.json()
+        except:
+            pass
+        return data
 
     def get_data(self):
         response = requests.get(self.url)

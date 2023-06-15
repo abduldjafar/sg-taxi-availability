@@ -13,6 +13,8 @@ class Transformation(object):
                 if "suburb" in geocode_datas["address"]
                 else "not known"
             )
+            if "suburb" not in geocode_datas["address"]:
+                print(geocode_datas)
         else:
-            road = "not known"
+            road = "address not found in map"
         return road

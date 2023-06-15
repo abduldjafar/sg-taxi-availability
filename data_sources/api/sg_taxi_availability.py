@@ -5,6 +5,12 @@ import datetime
 class ApiCall(object):
     def __init__(self):
         self.url = "https://api.data.gov.sg/v1/transport/taxi-availability"
+    
+
+    def geocode(self,longitude, latitude):
+        url =  "https://geocode.maps.co/reverse?lat={}&lon={}".format(str(latitude),str(longitude))
+        response = requests.get(url)
+        return response.json()
 
     def get_data(self):
         response = requests.get(self.url)

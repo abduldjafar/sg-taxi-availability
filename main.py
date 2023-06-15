@@ -42,7 +42,9 @@ if __name__ == "__main__":
         }
         for data in cordinates
     ]
-
+    
+    print("data amount that will be insert : {}".format(len(datas)))
+    
     data_warehouse.insert_rows_json(
         full_table_name, datas, bq_schemas.sg_taxi_availability()
     )

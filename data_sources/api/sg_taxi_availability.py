@@ -1,3 +1,4 @@
+from time import sleep
 import requests
 import datetime
 
@@ -9,15 +10,13 @@ class ApiCall(object):
 
     def geocode(self,longitude, latitude):
         url =  "https://geocode.maps.co/reverse?lat={}&lon={}".format(str(latitude),str(longitude))
-        print(url)
         data = {}
-
         try:
             response = requests.get(url)
             data = response.json()
+            sleep(1)
         except:
-            print(response.text)
-            print("\n")
+            pass
         return data
 
     def get_data(self):

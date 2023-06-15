@@ -14,7 +14,7 @@ class ApiCall(object):
         data = {}
         try:
             data = response.json()
-            sleep(0.5)
+            sleep(0.3)
         except:
             print(response.text)
         return data

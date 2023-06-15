@@ -17,7 +17,6 @@ class ApiCall(object):
             sleep(1)
         except:
             print(response.text)
-            sleep(5)
         return data
 
     def get_data(self):

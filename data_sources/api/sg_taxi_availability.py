@@ -16,7 +16,8 @@ class ApiCall(object):
             response = requests.get(url)
             data = response.json()
         except:
-            pass
+            print(response.text)
+            print("\n")
         return data
 
     def get_data(self):

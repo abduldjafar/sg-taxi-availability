@@ -2,7 +2,7 @@ from data_sources.api import sg_taxi_availability
 from data_warehouse import bigquery_api
 from data_warehouse import bigquery_schemas
 from transformation.transformation import Transformation
-from utils import time_utils
+from transformation import time_utils
 from os import environ
 
 if __name__ == "__main__":
